@@ -4,45 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { X } from "lucide-react";
+import { GALLERY_IMAGES } from "@/constants/wedding";
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-
-  const images = [
-    { src: "/images/bride-portrait.jpg", alt: "신부 단독" },
-    {
-      src: "/images/bride-beige-portrait.jpg",
-      alt: "베이지 드레스 신부 단독",
-    },
-    {
-      src: "/images/groom-beige-portrait.jpg",
-      alt: "베이지 정장 신랑 단독",
-    },
-    { src: "/images/couple-beige-hands.jpg", alt: "베이지 드레스 손잡은 커플" },
-    {
-      src: "/images/couple-beige-facing.jpg",
-      alt: "베이지 드레스 마주보는 커플",
-    },
-    {
-      src: "/images/couple-beige-formal.jpg",
-      alt: "베이지 드레스 공손히 마주보는 커플",
-    },
-    { src: "/images/couple-beige-stairs.jpg", alt: "베이지 드레스 계단 커플" },
-    { src: "/images/main-portrait.jpg", alt: "메인" },
-    { src: "/images/couple-thumbnail.jpg", alt: "커플 썸네일" },
-    { src: "/images/couple-black-heart.jpg", alt: "검정 드레스 하트 포즈" },
-    { src: "/images/couple-black-smile.jpg", alt: "검정 드레스 웃는 커플" },
-    {
-      src: "/images/couple-black-facing.jpg",
-      alt: "검정 드레스 마주보는 커플",
-    },
-  ];
-
-  const openModal = (index: number) => {
-    setSelectedImage(index);
-    setOpen(true);
-  };
 
   return (
     <section className="w-full py-16 px-4">
@@ -51,14 +17,17 @@ export default function Gallery() {
       </h2>
 
       <div className="grid grid-cols-2 gap-2">
-        {images.map((image, index) => (
+        {GALLERY_IMAGES.map((image, index) => (
           <div
             key={index}
             className="relative aspect-square cursor-pointer"
-            onClick={() => openModal(index)}
+            onClick={() => {
+              setSelectedImage(index);
+              setOpen(true);
+            }}
           >
             <Image
-              src={image.src || "/placeholder.svg"}
+              src={image.src}
               alt={image.alt}
               fill
               style={{ objectFit: "cover" }}
@@ -71,10 +40,10 @@ export default function Gallery() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-none p-0 bg-transparent border-none">
           <DialogTitle className="sr-only">
-            {images[selectedImage].alt}
+            {GALLERY_IMAGES[selectedImage].alt}
           </DialogTitle>
           <div className="absolute left-4 top-4 z-50 text-white font-medium">
-            {selectedImage + 1}/{images.length}
+            {selectedImage + 1}/{GALLERY_IMAGES.length}
           </div>
           <button
             onClick={() => setOpen(false)}
@@ -85,8 +54,8 @@ export default function Gallery() {
           </button>
           <div className="relative w-full h-screen">
             <Image
-              src={images[selectedImage].src || "/placeholder.svg"}
-              alt={images[selectedImage].alt}
+              src={GALLERY_IMAGES[selectedImage].src}
+              alt={GALLERY_IMAGES[selectedImage].alt}
               fill
               style={{ objectFit: "contain" }}
               priority

@@ -1,13 +1,15 @@
 export default function CoupleInfo() {
   return (
     <section className="w-full py-16 px-8 bg-white">
-      <div className="max-w-sm mx-auto">
-        <h2 className="text-2xl text-center serif-font mb-12 decorative-line">초대합니다</h2>
+      <div className="mx-auto">
+        <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
+          초대합니다
+        </h2>
 
         <div className="space-y-10">
           <div className="flex flex-col items-center text-center">
             <p className="text-lg mb-2">
-              김영호 · 이미경의 장남 <strong>승찬</strong>
+              송형우 · 방유진의 장남 <strong>승찬</strong>
             </p>
             <div className="flex space-x-4 mt-2">
               <a
@@ -53,7 +55,7 @@ export default function CoupleInfo() {
 
           <div className="flex flex-col items-center text-center">
             <p className="text-lg mb-2">
-              박철수 · 최지영의 장녀 <strong>은혜</strong>
+              김정윤 · 박은주의 장녀 <strong>은혜</strong>
             </p>
             <div className="flex space-x-4 mt-2">
               <a
@@ -99,5 +101,5 @@ export default function CoupleInfo() {
         </div>
       </div>
     </section>
-  )
+  );
 }

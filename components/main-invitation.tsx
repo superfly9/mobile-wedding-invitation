@@ -1,4 +1,10 @@
 import Image from "next/image";
+import {
+  WEDDING_DATE,
+  WEDDING_LOCATION,
+  INVITATION_MESSAGE,
+} from "@/constants/wedding";
+import { Fragment } from "react";
 
 export default function MainInvitation() {
   return (
@@ -16,15 +22,23 @@ export default function MainInvitation() {
       </div>
 
       <div className="text-center serif-font space-y-4 mb-8">
-        <p className="text-lg">서로가 마주보며 다져온 사랑을</p>
-        <p className="text-lg">이제 함께 한 곳을 바라보며</p>
-        <p className="text-lg">걸어갈 수 있는 큰 사랑으로 키우고자 합니다.</p>
-        <p className="text-lg">저희의 작은 혼인식에 초대합니다.</p>
-      </div>
-
-      <div className="text-center mt-8">
-        <p className="text-lg font-medium">2024년 5월 25일 토요일 오후 2시</p>
-        <p className="text-lg font-medium">그랜드 호텔 3층 그랜드볼룸</p>
+        <div className="text-center mt-8">
+          <p className="text-lg font-medium">{WEDDING_DATE.FULL}</p>
+          <p className="text-lg font-medium">{WEDDING_LOCATION.NAME}</p>
+        </div>
+        <div
+          className="space-y-4 text-left max-w-sm mx-auto"
+          style={INVITATION_MESSAGE.STYLE}
+        >
+          {INVITATION_MESSAGE.CONTENT.split("\n\n").map((paragraph, index) => (
+            <Fragment key={paragraph}>
+              {index > 0 && <br key={`br-${index}`} />}
+              {paragraph.split("\n").map((line, lineIndex) => (
+                <p key={`${index}-${lineIndex}`}>{line}</p>
+              ))}
+            </Fragment>
+          ))}
+        </div>
       </div>
     </section>
   );
