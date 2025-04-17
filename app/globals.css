@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4a3520;
+  --background-color: #f9f7f4;
+  --accent-color: #d4b78f;
+}
+
+body {
+  font-family: var(--font-noto-sans);
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+.serif-font {
+  font-family: var(--font-noto-serif);
+}
+
+.invitation-title {
+  font-family: var(--font-noto-serif);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.decorative-line {
+  position: relative;
+}
+
+.decorative-line::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background-color: var(--accent-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-day.wedding-day {
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+}
