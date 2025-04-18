@@ -28,3 +28,6 @@ next-env.d.ts
 
 # yarn cache
 .yarn/cache
+
+# yarn unplugged
+.yarn/unplugged
