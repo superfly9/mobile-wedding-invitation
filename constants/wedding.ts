@@ -8,13 +8,20 @@ export const WEDDING_DATE = {
 };
 
 export const WEDDING_LOCATION = {
-  NAME: "더베일리하우스 삼성 2층",
+  NAME: "더 베일리하우스 삼성",
   ADDRESS: {
     ROAD: "서울 강남구 영동대로 506",
-    JIBUN: "서울 강남구 삼성동 168-3"
   },
-  PHONE: "02-539-2956"
-};
+  PHONE: "02-539-2956",
+  COORDINATES: {
+    LATITUDE: 37.510232,
+    LONGITUDE: 127.063196,
+  },
+  MAP_LINKS: {
+    KAKAO: "https://map.kakao.com/link/map/더베일리하우스삼성,37.510232,127.063196",
+    NAVER: "https://map.naver.com/p/search/%EB%8D%94%EB%B2%A0%EC%9D%BC%EB%A6%AC%ED%95%98%EC%9A%B0%EC%8A%A4%20%EC%82%BC%EC%84%B1/place/520612610",
+  },
+} as const;
 
 export const INVITATION_MESSAGE = {
   CONTENT: `한 해의 마지막 밤, 운명처럼 만난 승찬과 은혜

@@ -57,10 +57,18 @@ export default function BankAccounts() {
       <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
         마음 전하기
       </h2>
+      <p className="text-center text-sm text-gray-600 mb-8">
+        오시지 못하는 분들을 위해 기재하였습니다.
+        <br />
+        너그러운 마음으로 양해 부탁드립니다.
+      </p>
       <div className="max-w-screen-md mx-auto">
         <Accordion type="multiple" className="w-full space-y-4">
           {/* 신랑측 계좌 */}
-          <AccordionItem value="groom" className="border border-gray-200 rounded-lg bg-white px-4">
+          <AccordionItem
+            value="groom"
+            className="border border-gray-200 rounded-lg bg-white px-4"
+          >
             <AccordionTrigger className="text-base font-medium hover:no-underline py-4">
               신랑측 계좌번호 보기
             </AccordionTrigger>
@@ -72,7 +80,10 @@ export default function BankAccounts() {
           </AccordionItem>
 
           {/* 신부측 계좌 */}
-          <AccordionItem value="bride" className="border border-gray-200 rounded-lg bg-white px-4">
+          <AccordionItem
+            value="bride"
+            className="border border-gray-200 rounded-lg bg-white px-4"
+          >
             <AccordionTrigger className="text-base font-medium hover:no-underline py-4">
               신부측 계좌번호 보기
             </AccordionTrigger>
@@ -86,4 +97,4 @@ export default function BankAccounts() {
       </div>
     </section>
   );
-} 
+}

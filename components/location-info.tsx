@@ -18,9 +18,7 @@ export default function LocationInfo() {
   const mapInstance = useRef<any>(null);
 
   const copyAddress = () => {
-    navigator.clipboard.writeText(
-      `${WEDDING_LOCATION.ADDRESS.ROAD}\n${WEDDING_LOCATION.ADDRESS.JIBUN}`
-    );
+    navigator.clipboard.writeText(`${WEDDING_LOCATION.ADDRESS.ROAD}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -29,8 +27,8 @@ export default function LocationInfo() {
     const initMap = async () => {
       if (!mapRef.current || mapInstance.current) return;
 
-      const latitude= 37.510232;
-      const longitude= 127.063196;
+      const latitude = 37.510232;
+      const longitude = 127.063196;
 
       try {
         // 네이버 지도 초기화
@@ -43,7 +41,10 @@ export default function LocationInfo() {
           },
         };
 
-        mapInstance.current = new window.naver.maps.Map(mapRef.current, mapOptions);
+        mapInstance.current = new window.naver.maps.Map(
+          mapRef.current,
+          mapOptions
+        );
 
         const marker = new window.naver.maps.Marker({
           position: new window.naver.maps.LatLng(latitude, longitude),
@@ -51,7 +52,7 @@ export default function LocationInfo() {
           title: WEDDING_LOCATION.NAME,
         });
       } catch (error) {
-        console.error('네이버 지도 초기화 실패:', error);
+        console.error("네이버 지도 초기화 실패:", error);
       }
     };
 
@@ -67,7 +68,6 @@ export default function LocationInfo() {
       <div className="text-center space-y-2 mb-8">
         <div className="text-lg font-medium">{WEDDING_LOCATION.NAME}</div>
         <div className="text-gray-600">{WEDDING_LOCATION.ADDRESS.ROAD}</div>
-        <div className="text-gray-600">{WEDDING_LOCATION.ADDRESS.JIBUN}</div>
         <div className="text-gray-600">{WEDDING_LOCATION.PHONE}</div>
       </div>
 
@@ -88,11 +88,14 @@ export default function LocationInfo() {
         </a>
       </div>
 
-      <div ref={mapRef} className="w-full h-[300px] rounded-md overflow-hidden mb-8" />
+      <div
+        ref={mapRef}
+        className="w-full h-[300px] rounded-md overflow-hidden mb-8"
+      />
 
       <div className="flex justify-center gap-4 mb-8">
         <a
-          href="https://map.kakao.com"
+          href={WEDDING_LOCATION.MAP_LINKS.KAKAO}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"
@@ -102,11 +105,12 @@ export default function LocationInfo() {
             alt="카카오맵"
             width={24}
             height={24}
+            className="rounded-full"
           />
           카카오내비
         </a>
         <a
-          href="https://map.naver.com"
+          href={WEDDING_LOCATION.MAP_LINKS.NAVER}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"
@@ -116,22 +120,9 @@ export default function LocationInfo() {
             alt="네이버지도"
             width={24}
             height={24}
+            className="rounded-full"
           />
           네이버 지도
-        </a>
-        <a
-          href="https://tmap.co.kr"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2"
-        >
-          <Image
-            src="/images/icons/icon_tmap.png"
-            alt="티맵"
-            width={24}
-            height={24}
-          />
-          티맵
         </a>
       </div>
 
@@ -168,7 +159,9 @@ export default function LocationInfo() {
         </TabsContent>
         <TabsContent value="car" className="p-4 bg-white rounded-md mt-2">
           <p className="text-sm">
-            주차는 더베일리하우스 앞에서 안내 받으시기 바랍니다.
+            주차는 더베일리하우스 근처 대화빌딩에 가능합니다.
+            <br />
+            (식장 도보 3분)
           </p>
         </TabsContent>
       </Tabs>
