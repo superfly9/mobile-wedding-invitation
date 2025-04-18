@@ -2,6 +2,7 @@ import type React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,11 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
           rel="stylesheet"
+        />
+        <Script
+          type="text/javascript"
+          src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAPS_CLIENT_ID}&submodules=geocoder`}
+          strategy="beforeInteractive"
         />
       </head>
       <body className={inter.className}>{children}</body>

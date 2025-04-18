@@ -1,20 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import { WEDDING_LOCATION } from "@/constants/wedding";
+
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
 
 export default function LocationInfo() {
   const [copied, setCopied] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstance = useRef<any>(null);
 
   const copyAddress = () => {
     navigator.clipboard.writeText(
-      "서울 강남구 영동대로 506\n서울 강남구 삼성동 168-3"
+      `${WEDDING_LOCATION.ADDRESS.ROAD}\n${WEDDING_LOCATION.ADDRESS.JIBUN}`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  useEffect(() => {
+    const initMap = async () => {
+      if (!mapRef.current || mapInstance.current) return;
+
+      const latitude= 37.510232;
+      const longitude= 127.063196;
+
+      try {
+        // 네이버 지도 초기화
+        const mapOptions = {
+          center: new window.naver.maps.LatLng(latitude, longitude), // 위도(latitude), 경도(longitude)
+          zoom: 15,
+          zoomControl: true,
+          zoomControlOptions: {
+            position: window.naver.maps.Position.TOP_RIGHT,
+          },
+        };
+
+        mapInstance.current = new window.naver.maps.Map(mapRef.current, mapOptions);
+
+        const marker = new window.naver.maps.Marker({
+          position: new window.naver.maps.LatLng(latitude, longitude),
+          map: mapInstance.current,
+          title: WEDDING_LOCATION.NAME,
+        });
+      } catch (error) {
+        console.error('네이버 지도 초기화 실패:', error);
+      }
+    };
+
+    initMap();
+  }, []);
 
   return (
     <section className="w-full py-16 px-4">
@@ -23,10 +65,10 @@ export default function LocationInfo() {
       </h2>
 
       <div className="text-center space-y-2 mb-8">
-        <div className="text-lg font-medium">더베일리하우스 삼성 2층</div>
-        <div className="text-gray-600">서울 강남구 영동대로 506</div>
-        <div className="text-gray-600">서울 강남구 삼성동 168-3</div>
-        <div className="text-gray-600">02-539-2956</div>
+        <div className="text-lg font-medium">{WEDDING_LOCATION.NAME}</div>
+        <div className="text-gray-600">{WEDDING_LOCATION.ADDRESS.ROAD}</div>
+        <div className="text-gray-600">{WEDDING_LOCATION.ADDRESS.JIBUN}</div>
+        <div className="text-gray-600">{WEDDING_LOCATION.PHONE}</div>
       </div>
 
       <div className="flex justify-center gap-4 mb-8">
@@ -38,7 +80,7 @@ export default function LocationInfo() {
           {copied ? "복사됨" : "주소 복사"}
         </button>
         <a
-          href="tel:02-539-2956"
+          href={`tel:${WEDDING_LOCATION.PHONE}`}
           className="flex items-center gap-2 px-6 py-2 rounded-full border border-gray-300 hover:bg-gray-50"
         >
           <Phone className="w-4 h-4" />
@@ -46,14 +88,7 @@ export default function LocationInfo() {
         </a>
       </div>
 
-      <div className="w-full h-[300px] relative mb-8">
-        <Image
-          src="/images/map.png"
-          alt="더베일리하우스 삼성점 지도"
-          fill
-          className="object-cover"
-        />
-      </div>
+      <div ref={mapRef} className="w-full h-[300px] rounded-md overflow-hidden mb-8" />
 
       <div className="flex justify-center gap-4 mb-8">
         <a
