@@ -98,7 +98,7 @@ export default function LocationInfo() {
           className="flex items-center gap-2"
         >
           <Image
-            src="/images/kakao-map.png"
+            src="/images/icons/icon_kakao.png"
             alt="카카오맵"
             width={24}
             height={24}
@@ -112,7 +112,7 @@ export default function LocationInfo() {
           className="flex items-center gap-2"
         >
           <Image
-            src="/images/naver-map.png"
+            src="/images/icons/icon_navermap.png"
             alt="네이버지도"
             width={24}
             height={24}
@@ -125,7 +125,12 @@ export default function LocationInfo() {
           rel="noopener noreferrer"
           className="flex items-center gap-2"
         >
-          <Image src="/images/tmap.png" alt="티맵" width={24} height={24} />
+          <Image
+            src="/images/icons/icon_tmap.png"
+            alt="티맵"
+            width={24}
+            height={24}
+          />
           티맵
         </a>
       </div>
@@ -137,7 +142,7 @@ export default function LocationInfo() {
           <TabsTrigger value="car">주차</TabsTrigger>
         </TabsList>
         <TabsContent value="subway" className="p-4 bg-white rounded-md mt-2">
-          <p className="text-sm">지하철 2호선 삼성중앙 7번출구 바로 앞</p>
+          <p className="text-sm">지하철 2호선 삼성역 7번출구 바로 앞</p>
         </TabsContent>
         <TabsContent value="bus" className="p-4 bg-white rounded-md mt-2">
           <div className="space-y-2 text-sm">
@@ -153,7 +158,7 @@ export default function LocationInfo() {
               <span className="font-medium">[광역버스]</span> 9407, 9507, 9607
             </p>
             <p className="text-gray-500 mt-2 text-xs">
-              * 더 베일의 하우스는 대중교통을 이용하시기 매우 편리합니다.
+              * 더 베일리하우스는 대중교통을 이용하시기 매우 편리합니다.
               <br />
               주변 교통이 혼잡하여 주차 시간이 많이 소요될 수 있으니
               <br />

@@ -7,6 +7,7 @@ import Calendar from "@/components/calendar";
 import ContactInfo from "@/components/contact-info";
 import Guestbook from "@/components/guestbook";
 import Footer from "@/components/footer";
+import BankAccounts from "@/components/bank-accounts";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <Gallery />
         <DateInfo />
         <LocationInfo />
-        <ContactInfo />
+        <BankAccounts />
         <Guestbook />
         <Footer />
       </div>

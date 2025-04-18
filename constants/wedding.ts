@@ -53,4 +53,41 @@ export const GALLERY_IMAGES = [
   { src: "/images/couple-black-heart.jpg", alt: "검정 드레스 하트 포즈" },
   { src: "/images/couple-black-smile.jpg", alt: "검정 드레스 웃는 커플" },
   { src: "/images/couple-black-facing.jpg", alt: "검정 드레스 마주보는 커플" },
-] as const; 
+] as const;
+
+export const BANK_ACCOUNTS = {
+  GROOM: [
+    {
+      holder: "송승찬",
+      bank: "토스뱅크",
+      accountNumber: "100012042817",
+    },
+    {
+      holder: "송형우",
+      bank: "NH 농협",
+      accountNumber: "44102526281", 
+    },
+    {
+      holder: "방유진",
+      bank: "신한은행",
+      accountNumber: "110167019026", 
+    },
+  ],
+  BRIDE: [
+    {
+      holder: "김은혜",
+      bank: "신한은행",
+      accountNumber: "110518568490",
+    },
+    {
+      holder: "김정윤",
+      bank: "KB국민",
+      accountNumber: "20260204432847",
+    },
+    {
+      holder: "박은주",
+      bank: "신한은행",
+      accountNumber: "110237606338",
+    },
+  ],
+}; 
