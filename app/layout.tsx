@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://mobile-wedding-invitation-ten-psi.vercel.app/images/couple-thumbnail.jpg",
-        width: 384,
-        height: 384,
+        width: 1200,
+        height: 600,
         alt: "김은혜 ♥️ 송승찬 결혼합니다",
       },
     ],
