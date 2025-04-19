@@ -45,7 +45,7 @@ export default function MainInvitation() {
         </div>
       </div>
 
-      <div className="text-center serif-font space-y-4 py-8 w-full px-4 sm:px-8">
+      <div className="text-center serif-font space-y-4 pb-8 w-full px-4 sm:px-8">
         <div className="text-center">
           <div
             style={{

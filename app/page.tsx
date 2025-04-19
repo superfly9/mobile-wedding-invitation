@@ -4,6 +4,7 @@ import Gallery from "@/components/gallery";
 import LocationInfo from "@/components/location-info";
 import BankAccounts from "@/components/bank-accounts";
 import Footer from "@/components/footer";
+import Guestbook from "@/components/guestbook";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Gallery />
         <LocationInfo />
         <BankAccounts />
+        <Guestbook />
         <Footer />
       </div>
     </main>
