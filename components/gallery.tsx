@@ -36,6 +36,9 @@ export default function Gallery() {
               src={image.src}
               alt={image.alt}
               fill
+              sizes="(max-width: 768px) 50vw, 33vw"
+              quality={75}
+              loading={index < 4 ? "eager" : "lazy"}
               style={{ objectFit: "cover" }}
               className="rounded-md"
             />
@@ -88,8 +91,10 @@ export default function Gallery() {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    style={{ objectFit: "contain" }}
+                    sizes="100vw"
+                    quality={90}
                     priority={Math.abs(index - selectedImage) <= 1}
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </SwiperSlide>

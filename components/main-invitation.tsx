@@ -16,6 +16,8 @@ export default function MainInvitation() {
             alt="웨딩 사진"
             fill
             priority
+            sizes="(max-width: 768px) 100vw, 75vw"
+            quality={90}
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -49,6 +51,9 @@ export default function MainInvitation() {
             src="/images/dear.jpg"
             alt="dear"
             fill
+            sizes="(max-width: 640px) 100vw, 640px"
+            quality={75}
+            loading="lazy"
             style={{ objectFit: "cover" }}
           />
         </p>
