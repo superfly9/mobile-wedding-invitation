@@ -24,7 +24,7 @@ export const WEDDING_LOCATION = {
 } as const;
 
 export const INVITATION_MESSAGE = {
-  CONTENT: `한 해의 마지막 밤, 운명처럼 만난 승찬과 은혜
+  CONTENT: `
 세 번의 겨울을 함께 보내고
 이제 여름의 첫 햇살 아래,
 새로운 인생을 시작합니다.
@@ -39,7 +39,6 @@ export const INVITATION_MESSAGE = {
   STYLE: {
     fontFamily: '"Nanum Myeongjo", serif',
     color: "rgb(77, 31, 3)",
-    fontSize: "18.1125px",
     letterSpacing: "0em",
     lineHeight: "1.4em",
     wordBreak: "keep-all",
@@ -97,4 +96,17 @@ export const BANK_ACCOUNTS = {
       accountNumber: "110237606338",
     },
   ],
-}; 
+};
+
+export const CONTACT_INFO = {
+  GROOM: {
+    NAME: "승찬",
+    PHONE: "010-9600-3053",
+    PARENTS: "송형우 · 방유진의 장남",
+  },
+  BRIDE: {
+    NAME: "은혜",
+    PHONE: "010-3899-3817",
+    PARENTS: "김정윤 · 박은주의 장녀",
+  },
+} as const; 

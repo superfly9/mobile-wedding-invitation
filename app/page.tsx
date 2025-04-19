@@ -16,7 +16,6 @@ export default function Home() {
         <MainInvitation />
         <CoupleInfo />
         <Gallery />
-        <DateInfo />
         <LocationInfo />
         <BankAccounts />
         <Guestbook />

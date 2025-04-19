@@ -53,14 +53,18 @@ function AccountItem({ account }: AccountItemProps) {
 
 export default function BankAccounts() {
   return (
-    <section className="w-full py-16 px-4 bg-[#F9F7F4]">
-      <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
+    <section className="w-full py-8 px-4 bg-[#F9F7F4]">
+      <h2 className="text-2xl text-center serif-font mb-8 decorative-line">
         마음 전하기
       </h2>
       <p className="text-center text-sm text-gray-600 mb-8">
-        오시지 못하는 분들을 위해 기재하였습니다.
+        참석이 어려워 축하를 전하지 못하는
         <br />
-        너그러운 마음으로 양해 부탁드립니다.
+        분들을 위해 기재하였습니다.
+        <br />
+        전해주시는 마음은 소중하게 간직하여
+        <br />
+        좋은 부부의 모습으로 오래오래 보답하겠습니다.
       </p>
       <div className="max-w-screen-md mx-auto">
         <Accordion type="multiple" className="w-full space-y-4">
