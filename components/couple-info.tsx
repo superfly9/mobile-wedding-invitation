@@ -1,55 +1,47 @@
-import PhoneIcon from "./icons/phone-icon";
-import MessageIcon from "./icons/message-icon";
-import { CONTACT_INFO } from "@/constants/wedding";
+"use client";
+
+import ContactModal from "./contact-modal";
+import { useState } from "react";
 
 export default function CoupleInfo() {
-  return (
-    <section className="w-full py-12 px-8">
-      <div className="mx-auto">
-        <div className="space-y-10">
-          <div className="flex flex-col items-center text-center">
-            <p className="text-lg mb-2">
-              {CONTACT_INFO.GROOM.PARENTS}{" "}
-              <strong>{CONTACT_INFO.GROOM.NAME}</strong>
-            </p>
-            <div className="flex space-x-4 mt-2">
-              <a
-                href={`tel:${CONTACT_INFO.GROOM.PHONE}`}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#d4b78f]"
-              >
-                <PhoneIcon />
-              </a>
-              <a
-                href={`sms:${CONTACT_INFO.GROOM.PHONE}`}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#d4b78f]"
-              >
-                <MessageIcon />
-              </a>
-            </div>
-          </div>
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
-          <div className="flex flex-col items-center text-center">
-            <p className="text-lg mb-2">
-              {CONTACT_INFO.BRIDE.PARENTS}{" "}
-              <strong>{CONTACT_INFO.BRIDE.NAME}</strong>
-            </p>
-            <div className="flex space-x-4 mt-2">
-              <a
-                href={`tel:${CONTACT_INFO.BRIDE.PHONE}`}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#d4b78f]"
-              >
-                <PhoneIcon />
-              </a>
-              <a
-                href={`sms:${CONTACT_INFO.BRIDE.PHONE}`}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#d4b78f]"
-              >
-                <MessageIcon />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  return (
+    <>
+      <button
+        onClick={() => setContactModalOpen(true)}
+        className="w-full bg-white border border-gray-200 rounded-xl p-3 text-blue-900 font-medium shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center"
+      >
+        <span className="mr-2">양가측에 연락하기</span>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 4.5H4.5C4.10218 4.5 3.72064 4.65804 3.43934 4.93934C3.15804 5.22064 3 5.60218 3 6V18C3 18.3978 3.15804 18.7794 3.43934 19.0607C3.72064 19.342 4.10218 19.5 4.5 19.5H19.5C19.8978 19.5 20.2794 19.342 20.5607 19.0607C20.842 18.7794 21 18.3978 21 18V6C21 5.60218 20.842 5.22064 20.5607 4.93934C20.2794 4.65804 19.8978 4.5 19.5 4.5Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M3 6L12 13.5L21 6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {/* 연락처 모달 */}
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+      />
+    </>
   );
 }

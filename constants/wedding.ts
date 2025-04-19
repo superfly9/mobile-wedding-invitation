@@ -101,11 +101,25 @@ export const CONTACT_INFO = {
   GROOM: {
     NAME: "승찬",
     PHONE: "010-9600-3053",
-    PARENTS: "송형우 · 방유진의 장남",
+    FATHER: {
+      NAME: "송형우",
+      PHONE: "010-4719-7714",
+    },
+    MOTHER: {
+      NAME: "방유진",
+      PHONE: "010-7753-7434",
+    },
   },
   BRIDE: {
     NAME: "은혜",
     PHONE: "010-3899-3817",
-    PARENTS: "김장윤 · 박은주의 장녀",
+    FATHER: {
+      NAME: "김장윤",
+      PHONE: "010-8398-8772",
+    },
+    MOTHER: {
+      NAME: "박은주",
+      PHONE: "010-4110-3817",
+    },
   },
 } as const; 
