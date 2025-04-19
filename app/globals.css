@@ -59,3 +59,12 @@ body {
   color: white;
   border-radius: 50%;
 }
+/* 버튼 라운드 스타일 */
+.rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+/* Input 라운드 스타일 */
+input[type="password"] {
+  border-radius: 0.75rem !important;
+}

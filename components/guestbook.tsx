@@ -1,42 +1,43 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { getGuestbookEntries } from "@/actions/guestbook-actions"
-import GuestbookForm from "./guestbook-form"
-import GuestbookList from "./guestbook-list"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Toaster } from "@/components/ui/toaster"
+import { useState, useEffect } from "react";
+import { getGuestbookEntries } from "@/actions/guestbook-actions";
+import GuestbookForm from "./guestbook-form";
+import GuestbookList from "./guestbook-list";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Guestbook() {
   const [entries, setEntries] = useState<
     Array<{
-      id: string
-      name: string
-      message: string
-      createdAt: string
+      id: string;
+      name: string;
+      message: string;
+      createdAt: string;
     }>
-  >([])
-  const [loading, setLoading] = useState(true)
+  >([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchEntries = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getGuestbookEntries()
-      setEntries(data)
+      const data = await getGuestbookEntries();
+      setEntries(data);
     } catch (error) {
-      console.error("방명록 조회 오류:", error)
+      console.error("방명록 조회 오류:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchEntries()
-  }, [])
+    fetchEntries();
+  }, []);
 
   return (
     <section className="w-full py-16 px-4">
-      <h2 className="text-2xl text-center serif-font mb-12 decorative-line">방명록</h2>
+      <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
+        방명록
+      </h2>
 
       <div className="max-w-sm mx-auto">
         <Tabs defaultValue="view" className="w-full">
@@ -60,8 +61,6 @@ export default function Guestbook() {
           </TabsContent>
         </Tabs>
       </div>
-
-      <Toaster />
     </section>
-  )
+  );
 }
