@@ -27,6 +27,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .serif-font {

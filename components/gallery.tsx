@@ -11,7 +11,7 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <section className="w-full py-12 px-4">
+    <section className="w-full py-12 px-4 bg-white">
       <h2 className="text-2xl text-center serif-font mb-8 decorative-line">
         우리의 추억
       </h2>

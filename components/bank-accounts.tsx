@@ -53,7 +53,7 @@ function AccountItem({ account }: AccountItemProps) {
 
 export default function BankAccounts() {
   return (
-    <section className="w-full py-8 px-4 bg-[#F9F7F4]">
+    <section className="w-full py-8 px-4">
       <h2 className="text-2xl text-center serif-font mb-8 decorative-line">
         마음 전하기
       </h2>

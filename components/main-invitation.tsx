@@ -21,7 +21,7 @@ export default function MainInvitation() {
         </div>
       </div>
 
-      <div className="text-center serif-font space-y-4">
+      <div className="text-center serif-font space-y-4 py-8">
         <div className="text-center">
           <div
             style={{
@@ -35,34 +35,34 @@ export default function MainInvitation() {
             <p>{WEDDING_LOCATION.NAME}</p>
           </div>
         </div>
-        <div
-          className="text-center max-w-sm mx-auto px-8"
-          style={{
-            ...INVITATION_MESSAGE.STYLE,
-            letterSpacing: "0.05em",
-            color: "rgb(51,51,51)",
-          }}
-        >
-          <p className="relative w-full h-36">
-            <Image
-              src="/images/dear.jpg"
-              alt="dear"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </p>
-          {INVITATION_MESSAGE.CONTENT.split("\n\n").map((paragraph, index) => (
-            <Fragment key={paragraph}>
-              <div className="mb-8">
-                {paragraph.split("\n").map((line, lineIndex) => (
-                  <p key={`${index}-${lineIndex}`} className="mb-1">
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </Fragment>
-          ))}
-        </div>
+      </div>
+      <div
+        className="text-center max-w-sm mx-auto px-8 bg-white"
+        style={{
+          ...INVITATION_MESSAGE.STYLE,
+          letterSpacing: "0.05em",
+          color: "rgb(51,51,51)",
+        }}
+      >
+        <p className="relative w-full h-36">
+          <Image
+            src="/images/dear.jpg"
+            alt="dear"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </p>
+        {INVITATION_MESSAGE.CONTENT.split("\n\n").map((paragraph, index) => (
+          <Fragment key={paragraph}>
+            <div className="mb-8">
+              {paragraph.split("\n").map((line, lineIndex) => (
+                <p key={`${index}-${lineIndex}`} className="mb-1">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </Fragment>
+        ))}
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export const WEDDING_DATE = {
 };
 
 export const WEDDING_LOCATION = {
-  NAME: "더 베일리하우스 삼성",
+  NAME: "더 베일리하우스 삼성 2층",
   ADDRESS: {
     ROAD: "서울 강남구 영동대로 506",
   },
@@ -40,7 +40,6 @@ export const INVITATION_MESSAGE = {
     fontFamily: '"Nanum Myeongjo", serif',
     color: "rgb(77, 31, 3)",
     letterSpacing: "0em",
-    lineHeight: "1.4em",
     wordBreak: "keep-all",
     fontWeight: 400,
   } as const

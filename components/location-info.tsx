@@ -60,10 +60,8 @@ export default function LocationInfo() {
   }, []);
 
   return (
-    <section className="w-full py-16 px-4">
-      <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
-        오시는 길
-      </h2>
+    <section className="w-full py-12 px-4">
+      <h2 className="text-2xl text-center serif-font mb-6">오시는 길</h2>
 
       <div className="text-center space-y-2 mb-8">
         <div className="text-lg font-medium">{WEDDING_LOCATION.NAME}</div>

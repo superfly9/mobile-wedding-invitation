@@ -18,7 +18,6 @@ export default function Home() {
         <Gallery />
         <LocationInfo />
         <BankAccounts />
-        <Guestbook />
         <Footer />
       </div>
     </main>
