@@ -4,10 +4,8 @@ import { CONTACT_INFO } from "@/constants/wedding";
 
 export default function CoupleInfo() {
   return (
-    <section className="w-full py-16 px-8">
+    <section className="w-full py-12 px-8">
       <div className="mx-auto">
-        <h2 className="text-2xl text-center serif-font mb-12">연락처</h2>
-
         <div className="space-y-10">
           <div className="flex flex-col items-center text-center">
             <p className="text-lg mb-2">
