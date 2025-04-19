@@ -64,11 +64,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 px-4">
+    <footer className="border-t border-gray-200 py-4 px-4">
       <div className="max-w-sm mx-auto flex justify-center space-x-4">
         <button
           onClick={handleKakaoShare}
-          className="flex items-center justify-center px-4 py-2 bg-transparent rounded-md text-sm font-medium text-[#000000] hover:bg-gray-50"
+          className="flex items-center justify-center px-4 py-2 bg-gray-100 rounded-md text-sm font-medium text-[#000000] hover:bg-gray-50"
         >
           <img
             src="/images/kakao-share.svg"
