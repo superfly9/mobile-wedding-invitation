@@ -61,7 +61,7 @@ export default function MainInvitation() {
         </div>
       </div>
       <div
-        className="text-center max-w-sm mx-auto px-4 sm:px-8 bg-white w-full"
+        className="text-center mx-auto px-4 sm:px-8 bg-white w-full"
         style={{
           ...INVITATION_MESSAGE.STYLE,
           letterSpacing: "0.05em",
