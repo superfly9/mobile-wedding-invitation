@@ -1,55 +1,20 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import { GALLERY_IMAGES } from "@/constants/wedding";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe && selectedImage < GALLERY_IMAGES.length - 1) {
-      setSelectedImage((prev) => prev + 1);
-    }
-
-    if (isRightSwipe && selectedImage > 0) {
-      setSelectedImage((prev) => prev - 1);
-    }
-
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft" && selectedImage > 0) {
-        setSelectedImage((prev) => prev - 1);
-      }
-      if (e.key === "ArrowRight" && selectedImage < GALLERY_IMAGES.length - 1) {
-        setSelectedImage((prev) => prev + 1);
-      }
-    },
-    [selectedImage]
-  );
 
   return (
     <section className="w-full py-12 px-4 bg-white">
@@ -79,52 +44,57 @@ export default function Gallery() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-none p-0 bg-transparent border-none">
+        <DialogContent className="max-w-none w-screen h-screen p-0 bg-transparent border-none">
           <DialogTitle className="sr-only">
             {GALLERY_IMAGES[selectedImage].alt}
           </DialogTitle>
-          <div className="absolute left-4 top-4 z-50 text-white font-medium">
+          <div
+            className={
+              "absolute left-4 top-4 z-50 text-white/80 font-medium px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-100"
+            }
+          >
             {selectedImage + 1}/{GALLERY_IMAGES.length}
           </div>
           <button
             onClick={() => setOpen(false)}
-            className="absolute right-4 top-4 z-50 rounded-sm text-white opacity-90 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
+            className="absolute right-4 top-4 z-50 rounded-full bg-black/30 backdrop-blur-sm p-2 text-white/80 transition-all hover:bg-black/50 hover:text-white"
           >
             <X className="h-6 w-6" />
             <span className="sr-only">Close</span>
           </button>
-          <div
-            className="relative w-full h-screen"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+
+          <Swiper
+            initialSlide={selectedImage}
+            className="w-full h-full"
+            style={
+              {
+                "--swiper-navigation-color": "#fff",
+                "--swiper-navigation-size": "24px",
+                "--swiper-navigation-sides-offset": "20px",
+                "--swiper-navigation-background-color": "rgba(0, 0, 0, 0.3)",
+                "--swiper-navigation-backdrop-filter": "blur(4px)",
+                "--swiper-navigation-padding": "12px",
+                "--swiper-navigation-border-radius": "9999px",
+              } as React.CSSProperties
+            }
           >
-            <Image
-              src={GALLERY_IMAGES[selectedImage].src}
-              alt={GALLERY_IMAGES[selectedImage].alt}
-              fill
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            {selectedImage > 0 && (
-              <button
-                onClick={() => setSelectedImage((prev) => prev - 1)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-black/50 text-white"
-                aria-label="이전 이미지"
+            {GALLERY_IMAGES.map((image, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex items-center justify-center"
               >
-                ←
-              </button>
-            )}
-            {selectedImage < GALLERY_IMAGES.length - 1 && (
-              <button
-                onClick={() => setSelectedImage((prev) => prev + 1)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-black/50 text-white"
-                aria-label="다음 이미지"
-              >
-                →
-              </button>
-            )}
-          </div>
+                <div className="relative w-full h-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    style={{ objectFit: "contain" }}
+                    priority={Math.abs(index - selectedImage) <= 1}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </DialogContent>
       </Dialog>
     </section>
