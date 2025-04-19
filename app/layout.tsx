@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "김은혜 ♥️ 송승찬 결혼합니다",
     description: "2025년 6월 6일 금요일 오후 12시 30분, 더베일리하우스 삼성",
-    images: ["/images/main-portrait.jpg"],
+    images: ["/images/couple-thumbnail.jpg"],
   },
 };
 

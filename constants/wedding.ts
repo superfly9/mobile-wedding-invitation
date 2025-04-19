@@ -46,10 +46,10 @@ export const INVITATION_MESSAGE = {
 };
 
 export const GALLERY_IMAGES = [
-  { src: "/images/main-portrait.jpg", alt: "메인" },
   { src: "/images/couple-thumbnail.jpg", alt: "커플 썸네일" },
   { src: "/images/bride-portrait.jpg", alt: "신부 단독" },
   { src: "/images/bride-beige-portrait.jpg", alt: "베이지 드레스 신부 단독" },
+  { src: "/images/main-portrait.jpg", alt: "메인" },
   { src: "/images/groom-beige-portrait.jpg", alt: "베이지 정장 신랑 단독" },
   { src: "/images/couple-beige-hands.jpg", alt: "베이지 드레스 손잡은 커플" },
   { src: "/images/couple-beige-facing.jpg", alt: "베이지 드레스 마주보는 커플" },
