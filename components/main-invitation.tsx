@@ -8,8 +8,8 @@ import {
 
 export default function MainInvitation() {
   return (
-    <section className="w-screen -mx-[env(safe-area-inset-left)] flex flex-col items-center">
-      <div className="relative w-full mx-auto mb-12 px-8">
+    <section className="w-full flex flex-col items-center">
+      <div className="relative w-full mx-auto mb-12 px-4 sm:px-8">
         <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden">
           <Image
             src="/images/main-portrait.jpg"
@@ -21,7 +21,7 @@ export default function MainInvitation() {
         </div>
       </div>
 
-      <div className="text-center serif-font space-y-4 py-8">
+      <div className="text-center serif-font space-y-4 py-8 w-full px-4 sm:px-8">
         <div className="text-center">
           <div
             style={{
@@ -37,7 +37,7 @@ export default function MainInvitation() {
         </div>
       </div>
       <div
-        className="text-center max-w-sm mx-auto px-8 bg-white"
+        className="text-center max-w-sm mx-auto px-4 sm:px-8 bg-white w-full"
         style={{
           ...INVITATION_MESSAGE.STYLE,
           letterSpacing: "0.05em",
