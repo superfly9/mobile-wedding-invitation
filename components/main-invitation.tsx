@@ -10,14 +10,36 @@ export default function MainInvitation() {
   return (
     <section className="w-full flex flex-col items-center">
       <div className="relative w-full mx-auto mb-12 px-4 sm:px-8">
-        <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden">
+        <div className="flex justify-end mt-8 mb-4">
+          <div
+            className="text-right mb-4"
+            style={{
+              fontFamily: '"Nanum Myeongjo", serif',
+              fontSize: "1.8em",
+              letterSpacing: "0.2em",
+              lineHeight: "1.4em",
+            }}
+          >
+            <p>승찬</p>
+            <div className="relative">
+              <Image
+                src="/images/decorative-line.jpg"
+                alt="구분선"
+                width={175}
+                height={53}
+              />
+            </div>
+            <p>은혜</p>
+          </div>
+        </div>
+        <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden ">
           <Image
             src="/images/main-portrait.jpg"
             alt="웨딩 사진"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 75vw"
-            quality={90}
+            quality={100}
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -46,7 +68,7 @@ export default function MainInvitation() {
           color: "rgb(51,51,51)",
         }}
       >
-        <p className="relative w-full h-36">
+        <p className="relative w-full h-36" style={{ marginTop: "-40px" }}>
           <Image
             src="/images/dear.jpg"
             alt="dear"

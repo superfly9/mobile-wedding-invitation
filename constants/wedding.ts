@@ -85,7 +85,7 @@ export const BANK_ACCOUNTS = {
       accountNumber: "110518568490",
     },
     {
-      holder: "김정윤",
+      holder: "김장윤",
       bank: "KB국민",
       accountNumber: "20260204432847",
     },
@@ -106,6 +106,6 @@ export const CONTACT_INFO = {
   BRIDE: {
     NAME: "은혜",
     PHONE: "010-3899-3817",
-    PARENTS: "김정윤 · 박은주의 장녀",
+    PARENTS: "김장윤 · 박은주의 장녀",
   },
 } as const; 

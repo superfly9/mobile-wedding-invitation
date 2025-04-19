@@ -60,7 +60,7 @@ export default function LocationInfo() {
   }, []);
 
   return (
-    <section className="w-full py-12 px-4">
+    <section className="w-full pt-12 pb-6 px-4">
       <h2 className="text-2xl text-center serif-font mb-6">오시는 길</h2>
 
       <div className="text-center space-y-2 mb-8">

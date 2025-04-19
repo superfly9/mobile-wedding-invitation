@@ -53,14 +53,14 @@ export default function Gallery() {
           </DialogTitle>
           <div
             className={
-              "absolute left-4 top-4 z-50 text-white/80 font-medium px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-100"
+              "absolute left-4 top-2 z-50 text-white font-medium px-3 py-1.5 transition-opacity duration-300 opacity-100"
             }
           >
             {selectedImage + 1}/{GALLERY_IMAGES.length}
           </div>
           <button
             onClick={() => setOpen(false)}
-            className="absolute right-4 top-4 z-50 rounded-full bg-black/30 backdrop-blur-sm p-2 text-white/80 transition-all hover:bg-black/50 hover:text-white"
+            className="absolute right-4 top-2 z-50 p-2 text-white transition-all hover:text-white/80"
           >
             <X className="h-6 w-6" />
             <span className="sr-only">Close</span>
@@ -69,15 +69,11 @@ export default function Gallery() {
           <Swiper
             initialSlide={selectedImage}
             className="w-full h-full"
+            modules={[]}
+            onSlideChange={(swiper) => setSelectedImage(swiper.activeIndex)}
             style={
               {
-                "--swiper-navigation-color": "#fff",
-                "--swiper-navigation-size": "24px",
-                "--swiper-navigation-sides-offset": "20px",
-                "--swiper-navigation-background-color": "rgba(0, 0, 0, 0.3)",
-                "--swiper-navigation-backdrop-filter": "blur(4px)",
-                "--swiper-navigation-padding": "12px",
-                "--swiper-navigation-border-radius": "9999px",
+                // Navigation 스타일 속성 제거
               } as React.CSSProperties
             }
           >
