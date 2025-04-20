@@ -65,6 +65,6 @@ body {
 }
 
 /* Input 라운드 스타일 */
-input[type="password"] {
+input {
   border-radius: 0.75rem !important;
 }

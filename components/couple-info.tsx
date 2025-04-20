@@ -10,7 +10,7 @@ export default function CoupleInfo() {
     <>
       <button
         onClick={() => setContactModalOpen(true)}
-        className="w-full bg-white border border-gray-200 rounded-xl p-3 text-blue-900 font-medium shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center"
+        className="w-full bg-white border border-gray-500 rounded-xl p-3 font-medium shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center"
       >
         <span className="mr-2">양가측에 연락하기</span>
         <svg

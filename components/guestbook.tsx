@@ -16,6 +16,7 @@ export default function Guestbook() {
     }>
   >([]);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<string>("view");
 
   const fetchEntries = async () => {
     setLoading(true);
@@ -33,6 +34,11 @@ export default function Guestbook() {
     fetchEntries();
   }, []);
 
+  const handleSuccess = () => {
+    fetchEntries();
+    setActiveTab("view"); // 성공 후 방명록 보기 탭으로 전환
+  };
+
   return (
     <section className="w-full py-16 px-4">
       <h2 className="text-2xl text-center serif-font mb-12 decorative-line">
@@ -40,7 +46,7 @@ export default function Guestbook() {
       </h2>
 
       <div className="max-w-sm mx-auto">
-        <Tabs defaultValue="view" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="view">방명록 보기</TabsTrigger>
             <TabsTrigger value="write">메시지 남기기</TabsTrigger>
@@ -57,7 +63,7 @@ export default function Guestbook() {
           </TabsContent>
 
           <TabsContent value="write" className="mt-4">
-            <GuestbookForm onSuccess={fetchEntries} />
+            <GuestbookForm onSuccess={handleSuccess} />
           </TabsContent>
         </Tabs>
       </div>
