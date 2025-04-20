@@ -5,6 +5,7 @@ import {
   WEDDING_LOCATION,
   INVITATION_MESSAGE,
 } from "@/constants/wedding";
+import CoupleInfo from "@/components/couple-info";
 
 export default function MainInvitation() {
   return (
@@ -90,6 +91,7 @@ export default function MainInvitation() {
             </div>
           </Fragment>
         ))}
+        <CoupleInfo />
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center bg-[#f9f7f4]">
       <div className="w-full max-w-md mx-auto">
         <MainInvitation />
-        <CoupleInfo />
         <Gallery />
         <LocationInfo />
         <BankAccounts />
