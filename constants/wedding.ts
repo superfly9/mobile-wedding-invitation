@@ -99,7 +99,7 @@ export const BANK_ACCOUNTS = {
 
 export const CONTACT_INFO = {
   GROOM: {
-    NAME: "승찬",
+    NAME: "송승찬",
     PHONE: "010-9600-3053",
     FATHER: {
       NAME: "송형우",
@@ -111,7 +111,7 @@ export const CONTACT_INFO = {
     },
   },
   BRIDE: {
-    NAME: "은혜",
+    NAME: "김은혜",
     PHONE: "010-9938-3817",
     FATHER: {
       NAME: "김장윤",
