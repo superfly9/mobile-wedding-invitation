@@ -112,7 +112,7 @@ export const CONTACT_INFO = {
   },
   BRIDE: {
     NAME: "은혜",
-    PHONE: "010-3899-3817",
+    PHONE: "010-9938-3817",
     FATHER: {
       NAME: "김장윤",
       PHONE: "010-8398-8772",
