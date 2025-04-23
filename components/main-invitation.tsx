@@ -6,7 +6,7 @@ import {
   INVITATION_MESSAGE,
 } from "@/constants/wedding";
 import CoupleInfo from "@/components/couple-info";
-
+import { getSupabaseImageUrl } from "@/utils/image-url";
 export default function MainInvitation() {
   return (
     <section className="w-full flex flex-col items-center">
@@ -35,7 +35,7 @@ export default function MainInvitation() {
         </div>
         <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden ">
           <Image
-            src="/images/main-portrait.jpg"
+            src={getSupabaseImageUrl("main-portrait.jpg")}
             alt="웨딩 사진"
             fill
             priority

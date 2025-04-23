@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { getSupabaseImageUrl } from "@/utils/image-url";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "2025년 6월 6일 금요일 오후 12시 30분, 더베일리하우스 삼성",
     images: [
       {
-        url: "https://mobile-wedding-invitation-ten-psi.vercel.app/images/couple-thumbnail.jpg",
+        url: getSupabaseImageUrl("couple-thumbnail.jpg"),
         width: 1200,
         height: 600,
         alt: "김은혜 ♥️ 송승찬 결혼합니다",
