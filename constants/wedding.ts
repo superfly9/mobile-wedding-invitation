@@ -1,3 +1,5 @@
+import { getSupabaseImageUrl } from '@/utils/image-url';
+
 export const WEDDING_DATE = {
   FULL: "2025년 6월 6일 금요일 오후 12시 30분",
   YEAR: 2025,
@@ -46,18 +48,18 @@ export const INVITATION_MESSAGE = {
 };
 
 export const GALLERY_IMAGES = [
-  { src: "/images/couple-thumbnail.jpg", alt: "커플 썸네일" },
-  { src: "/images/bride-portrait.jpg", alt: "신부 단독" },
-  { src: "/images/bride-beige-portrait.jpg", alt: "베이지 드레스 신부 단독" },
-  { src: "/images/main-portrait.jpg", alt: "메인" },
-  { src: "/images/groom-beige-portrait.jpg", alt: "베이지 정장 신랑 단독" },
-  { src: "/images/couple-beige-hands.jpg", alt: "베이지 드레스 손잡은 커플" },
-  { src: "/images/couple-beige-facing.jpg", alt: "베이지 드레스 마주보는 커플" },
-  { src: "/images/couple-beige-formal.jpg", alt: "베이지 드레스 공손히 마주보는 커플" },
-  { src: "/images/couple-beige-stairs.jpg", alt: "베이지 드레스 계단 커플" },
-  { src: "/images/couple-black-heart.jpg", alt: "검정 드레스 하트 포즈" },
-  { src: "/images/couple-black-smile.jpg", alt: "검정 드레스 웃는 커플" },
-  { src: "/images/couple-black-facing.jpg", alt: "검정 드레스 마주보는 커플" },
+  { src: getSupabaseImageUrl('couple-thumbnail.jpg'), alt: "커플 썸네일" },
+  { src: getSupabaseImageUrl('bride-portrait.jpg'), alt: "신부 단독" },
+  { src: getSupabaseImageUrl('bride-beige-portrait.jpg'), alt: "베이지 드레스 신부 단독" },
+  { src: getSupabaseImageUrl('main-portrait.jpg'), alt: "메인" },
+  { src: getSupabaseImageUrl('groom-beige-portrait.jpg'), alt: "베이지 정장 신랑 단독" },
+  { src: getSupabaseImageUrl('couple-beige-hands.jpg'), alt: "베이지 드레스 손잡은 커플" },
+  { src: getSupabaseImageUrl('couple-beige-facing.jpg'), alt: "베이지 드레스 마주보는 커플" },
+  { src: getSupabaseImageUrl('couple-beige-formal.jpg'), alt: "베이지 드레스 공손히 마주보는 커플" },
+  { src: getSupabaseImageUrl('couple-beige-stairs.jpg'), alt: "베이지 드레스 계단 커플" },
+  { src: getSupabaseImageUrl('couple-black-heart.jpg'), alt: "검정 드레스 하트 포즈" },
+  { src: getSupabaseImageUrl('couple-black-smile.jpg'), alt: "검정 드레스 웃는 커플" },
+  { src: getSupabaseImageUrl('couple-black-facing.jpg'), alt: "검정 드레스 마주보는 커플" },
 ] as const;
 
 export const BANK_ACCOUNTS = {
